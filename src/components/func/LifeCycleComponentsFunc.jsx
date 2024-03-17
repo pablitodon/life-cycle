@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-
+import MemoComponentCount from './MemoComponentCount'
 
 const fetchData = async () => {
     try {
@@ -20,18 +20,6 @@ const fetchData = async () => {
 }
 
 
-const MemoComponentCount = React.memo(
-    ({ count }) => {
-        console.log('Компонент перерисовывается!');
-
-        return (
-            <div>
-                <p>Count: {count}</p>
-            </div>
-        );
-    },
-    (prevState, nextState) => nextState.count % 2 !== 0
-);
 
 
 const LifeCycleComponentsFunc = () => {
@@ -59,6 +47,8 @@ const LifeCycleComponentsFunc = () => {
     );
 
 };
+
+
 
 
 
